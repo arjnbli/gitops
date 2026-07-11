@@ -19,3 +19,6 @@ spec:
       containers:
       - image: sissbruecker/linkding:1.45.0
         name: linkding
+        envFrom:
+        - secretRef:
+            name: linkding-superuser
