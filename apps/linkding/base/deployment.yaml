@@ -22,3 +22,10 @@ spec:
         envFrom:
         - secretRef:
             name: linkding-superuser
+        volumeMounts:
+        - name: linkding-vol
+          mountPath: /etc/linkding/data
+      volumes:
+      - name: linkding-vol
+        persistentVolumeClaim:
+          claimName: linkding-pvc
