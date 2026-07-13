@@ -3,6 +3,6 @@ kind: Kustomization
 namespace: linkding
 resources:
 - ../../base
-- secret.yaml
+- sealed-secret.yaml
 patches:
 - path: pvc-patch.yaml
