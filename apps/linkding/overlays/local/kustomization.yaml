@@ -4,5 +4,6 @@ namespace: linkding
 resources:
 - ../../base
 - sealed-secret.yaml
+- ingress.yaml
 patches:
 - path: pvc-patch.yaml
