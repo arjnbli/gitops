@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: linkding-local
+  namespace: argocd
+spec:
+  project: default
+  source:
+    path: apps/linkding/overlays/local
+    repoURL: 'https://github.com/arjnbli/gitops.git'
+    targetRevision: HEAD
+  destination:
+    namespace: linkding
+    server: 'https://kubernetes.default.svc'
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+    - CreateNamespace=true
